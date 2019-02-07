@@ -4,6 +4,13 @@ notifications:
   email: false
 env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
+  - CF_API_URL="https://console.run.pivotal.io/"
+  - CF_USERNAME="brian.walsh@emc.com"
+  - CF_PASSWORD="P!votal_123"
+  - CF_ORG="DellEMC_PAL"
+  - CF_SPACE="brian.walsh@emc.com"
+  - GITHUB_USERNAME="brianw"
+  - GITHUB_OAUTH_TOKEN=46de0bcd6ba56995c38d94a0a8f253b57b360da3
 if: tag IS blank
 
 
