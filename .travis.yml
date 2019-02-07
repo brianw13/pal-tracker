@@ -31,10 +31,14 @@ jobs:
       before_deploy:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       deploy:
+        - echo "in deploy step..."
         provider: cloudfoundry
         api: $CF_API_URL
         username: $CF_USERNAME
         password: $CF_PASSWORD
         organization: $CF_ORG
         space: $CF_SPACE
+    - stage: Finish and Cleanup
+      language: bash
+        - echo "Finalize steps..."
 
