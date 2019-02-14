@@ -1,10 +1,15 @@
 package io.pivotal.pal.tracker;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
+
+    private final Logger log = LoggerFactory.getLogger(getClass());
     private HashMap<Long, TimeEntry> timeEntries = new HashMap<>();
 
     @Override

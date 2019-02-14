@@ -1,8 +1,13 @@
 package io.pivotal.pal.tracker;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.time.LocalDate;
 
 public class TimeEntry {
+    private final Logger log = LoggerFactory.getLogger(getClass());
+
     private long id;
     private long projectId;
     private long userId;
