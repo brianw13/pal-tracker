@@ -1,7 +1,7 @@
 package test.pivotal.pal.tracker;
 
 import io.pivotal.pal.tracker.InMemoryTimeEntryRepository;
-import io.pivotal.pal.tracker.TimeEntry;
+import io.pivotal.pal.tracker.model.TimeEntry;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -82,8 +82,7 @@ public class InMemoryTimeEntryRepositoryTest {
     public void update_MissingEntry() {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
 
-        TimeEntry updatedEntry = repo.update(
-                1L,
+        TimeEntry updatedEntry = repo.update(1L,
                 new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
 
         assertThat(updatedEntry).isNull();
