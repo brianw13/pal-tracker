@@ -25,11 +25,6 @@ repositories {
     mavenCentral()
 }
 
-bootJar {
-    baseName = 'pal-tracker'
-    version =  '0.1.0'
-}
-
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:2.0.6.RELEASE")
     testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
@@ -45,6 +40,10 @@ test.environment([
 ])
 
 
+bootJar {
+    baseName = 'pal-tracker'
+    version =  '0.1.0'
+}
 
 
 
