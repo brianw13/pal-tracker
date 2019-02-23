@@ -7,6 +7,8 @@ import io.pivotal.pal.tracker.TimeEntry;
 import io.pivotal.pal.tracker.TimeEntryRepository;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Date;
@@ -18,11 +20,18 @@ import java.util.TimeZone;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class JdbcTimeEntryRepositoryTest {
+
+    private final Logger log = LoggerFactory.getLogger(getClass());
+
     private TimeEntryRepository subject;
     private JdbcTemplate jdbcTemplate;
 
     @Before
     public void setUp() throws Exception {
+
+        String a = System.getenv("SPRING_DATASOURCE_URL");
+        log.debug("a:" + a);
+
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
 

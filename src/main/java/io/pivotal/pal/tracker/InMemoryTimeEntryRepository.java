@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
